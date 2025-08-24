@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+{
+            "name": "FastAPI Debug - TRAVELANGGRAPH_API",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "travelanggraph_api.main:app",
+                "--reload"
+            ],
+            "python": "/opt/miniconda3/envs/langgraphtravel/bin/python",
+            "jinja": true,
+            "cwd": "${workspaceFolder}/TRAVELANGGRAPH_API",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "API_PORT": "8000",
+                "CONDA_DEFAULT_ENV": "langgraphtravel"
+            }
+        }
+
+    ]
+}

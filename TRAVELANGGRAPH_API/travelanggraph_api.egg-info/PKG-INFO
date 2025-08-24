@@ -1,0 +1,89 @@
+Metadata-Version: 2.4
+Name: travelanggraph-api
+Version: 0.1.0
+Summary: A FastAPI backend for TravelLangGraph application
+Home-page: https://github.com/yourusername/travelanggraph
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: uvicorn[standard]>=0.24.0
+Requires-Dist: pydantic>=2.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# TravelLangGraph API
+
+A FastAPI backend for the TravelLangGraph application.
+
+## Installation
+
+### Using Conda
+
+```bash
+conda create -n travelanggraph python=3.11
+conda activate travelanggraph
+pip install -e .
+```
+
+### Development Installation
+
+```bash
+pip install -e ".[dev]"
+```
+
+## Running the API
+
+```bash
+# Using the entry point
+travelanggraph-api
+
+# Or directly with uvicorn
+uvicorn travelanggraph_api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+## API Documentation
+
+Once running, visit:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+## Development
+
+```bash
+# Run tests
+pytest
+
+# Format code
+black .
+
+# Lint code
+flake8
+
+# Type checking
+mypy .
+```

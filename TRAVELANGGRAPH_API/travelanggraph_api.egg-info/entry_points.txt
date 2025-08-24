@@ -1,0 +1,2 @@
+[console_scripts]
+travelanggraph-api = travelanggraph_api.main:main
