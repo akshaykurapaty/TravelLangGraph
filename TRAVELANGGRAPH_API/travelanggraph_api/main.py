@@ -6,6 +6,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
+# Import controllers
+from controllers.health_controller import router as health_router
+from controllers.hello_controller import router as hello_router
+
 # Create FastAPI app
 app = FastAPI(
     title="TravelLangGraph API",
@@ -24,20 +28,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include routers
+app.include_router(health_router)
+app.include_router(hello_router)
+
 @app.get("/")
 async def root():
     """Root endpoint."""
-    return {"message": "Welcome to TravelLangGraph API!"}
-
-@app.get("/hello")
-async def hello_world():
-    """Hello World endpoint."""
-    return {"message": "Hello, World!"}
-
-@app.get("/health")
-async def health_check():
-    """Health check endpoint."""
-    return {"status": "healthy", "service": "TravelLangGraph API"}
+    return {"message": "Welcome to TravelLangGraph API!", "version": "0.1.0"}
 
 def main():
     """Main function to run the API server."""

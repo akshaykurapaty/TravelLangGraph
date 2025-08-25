@@ -1,5 +1,5 @@
 """
-Pydantic models for TravelLangGraph API.
+Pydantic schemas for TravelLangGraph API.
 """
 
 from pydantic import BaseModel
